@@ -27,8 +27,11 @@ a {
 }
 
 img {
-  filter: brightness(50%);
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
+  filter: brightness(50%);
   border-radius: inherit;
 }
 
@@ -245,6 +248,7 @@ body {
   padding: 1rem 0.3rem;
 }
 .container header {
+  position: relative;
   margin-top: 3rem;
   height: auto;
   display: flex;
@@ -258,8 +262,8 @@ body {
   top: 0;
   left: 0;
   transform: translate(13%, 13%);
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   background: url("../../../imgs/dvwec.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -639,20 +643,206 @@ body {
   color: var(--gradient-color-2);
   box-shadow: 0 0 3px 10px rgba(1, 5, 22, 0.095);
 }
+.container #services .section-content {
+  border-radius: 0.3rem;
+}
+.container #services .section-content .service-header {
+  width: 100%;
+  height: 300px;
+  border-radius: inherit;
+  margin: 2rem 0;
+}
+.container #services .section-content .service-header img {
+  object-fit: cover !important;
+}
 .container #services .section-content .service-list {
   margin-top: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 1rem;
-  border-radius: 0.3rem;
+  gap: 4rem 1rem;
+  flex-wrap: wrap;
+  border-radius: inherit;
 }
 .container #services .section-content .service-list .service {
   min-width: 200px;
   flex-basis: 25%;
-  height: 200px;
-  border: 1px solid var(--secondary-bg-color);
+  flex-grow: 1;
+  height: 350px;
   border-radius: inherit;
+  border: 1px solid var(--glass-bg-color);
+}
+.container #services .section-content .service-list .service .service-img-top {
+  width: 100%;
+  height: 50%;
+  border-radius: inherit;
+}
+.container #services .section-content .service-list .service .service-img-top img {
+  object-fit: cover;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+.container #services .section-content .service-list .service .service-body {
+  width: 100%;
+  height: 50%;
+  padding: 0.2rem;
+}
+.container #services .section-content .service-list .service .service-body p {
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+.container #blog .section-content .blog-list {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 0.3rem;
+  width: 100%;
+  height: auto;
+  border-radius: 0.3rem;
+}
+.container #blog .section-content .blog-list .blog-sidebar {
+  flex-basis: 29%;
+  height: 500px;
+  border: 1px solid var(--glass-bg-color);
+  order: 1;
+  border-radius: inherit;
+}
+.container #blog .section-content .blog-list .blogs {
+  flex-basis: 70%;
+  height: auto;
+  border-radius: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 4rem 1rem;
+  flex-wrap: wrap;
+  padding: 0.3rem;
+}
+.container #blog .section-content .blog-list .blogs .blog {
+  flex-basis: 48%;
+  width: 200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid var(--glass-bg-color);
+  padding: 0 0 0.5rem 0;
+  border-radius: 0.3rem 0.3rem 1rem 1rem;
+}
+.container #blog .section-content .blog-list .blogs .blog .img-top {
+  height: 300px;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+.container #blog .section-content .blog-list .blogs .blog .img-top img {
+  object-fit: cover;
+  border-radius: 0.3rem 0.3rem 2rem 2rem;
+}
+.container #blog .section-content .blog-list .blogs .blog .about-blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.container #blog .section-content .blog-list .blogs .blog .about-blog svg {
+  font-size: 0.7rem;
+}
+.container #blog .section-content .blog-list .blogs .blog .about-blog p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  text-transform: capitalize;
+}
+.container #blog .section-content .blog-list .blogs .blog .about-blog p span {
+  font-size: 0.74rem;
+}
+.container #blog .section-content .blog-list .blogs .blog .blog-body {
+  display: flex;
+  flex-direction: column;
+  grid: 1rem;
+}
+.container #blog .section-content .blog-list .blogs .blog .blog-body p {
+  padding: 1rem 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.3rem;
+}
+.container #blog .section-content .blog-list .blogs .blog .blog-body .read-more {
+  align-self: center;
+  justify-self: center;
+  width: 80%;
+  border-radius: var(--borderRadius-pill);
+}
+.container #blog .section-content .blog-list .blogs .blog .blog-body .read-more a {
+  display: block;
+  width: 100%;
+  padding: 0.4rem 2rem;
+  border-radius: var(--borderRadius-pill);
+  background-color: var(--gradient-color-1);
+  border: 0.2rem solid var(--gradient-color-1);
+  text-transform: capitalize;
+  text-align: center;
+  color: #fff !important;
+  filter: unset;
+}
+.container #blog .section-content .blog-list .blogs .blog .blog-body .read-more a:hover {
+  background-color: var(--secondary-color);
+  border: 0.2rem solid transparent;
+  backdrop-filter: blur(25px);
+  box-shadow: -15px 17px 17px rgba(12, 13, 18, 0.25);
+}
+.container #blog .section-content .blog-list .blogs .blogs-navigate-more {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0.3rem;
+}
+.container #blog .section-content .blog-list .blogs .blogs-navigate-more .next-blogs {
+  flex-basis: 50%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1rem;
+}
+.container #blog .section-content .blog-list .blogs .blogs-navigate-more .next-blogs .next-blog {
+  width: 40px;
+  height: 100%;
+  cursor: pointer;
+  background-color: inherit;
+  border: 0.1rem solid var(--glass-bg-color);
+  cursor: pointer;
+  text-transform: capitalize;
+  border-radius: 0.3rem;
+}
+.container #blog .section-content .blog-list .blogs .blogs-navigate-more .next-blogs .next-blog a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+}
+.container #blog .section-content .blog-list .blogs .blogs-navigate-more .next-blogs .next-blog a:hover {
+  background-color: var(--gradient-color-1);
+  border: 0.1rem solid transparent;
+  backdrop-filter: blur(25px);
+  box-shadow: -15px 17px 17px rgba(12, 13, 18, 0.25);
+  color: #fff !important;
+  filter: unset;
+}
+.container #blog .section-content .blog-list .blogs .blogs-navigate-more .next-blogs .next-blog:last-child {
+  width: 50px;
+}
+.container #blog .section-content .blog-list .blogs .blogs-navigate-more .next-blogs .active {
+  border: 0.1rem solid var(--link-hover);
+}
+.container #blog .section-content .blog-list .blogs .blogs-navigate-more .next-blogs .active a {
+  color: var(--secondary-color);
 }
 
 ::-webkit-scrollbar {

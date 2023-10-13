@@ -693,6 +693,7 @@ body {
 .container #blog .section-content .blog-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0.3rem;
   width: 100%;
@@ -700,24 +701,174 @@ body {
   border-radius: 0.3rem;
 }
 .container #blog .section-content .blog-list .blog-sidebar {
+  flex-grow: 1;
   flex-basis: 29%;
-  height: 500px;
-  border: 1px solid var(--glass-bg-color);
+  height: auto;
   order: 1;
   border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
+}
+.container #blog .section-content .blog-list .blog-sidebar .search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.3rem;
+  text-transform: capitalize;
+}
+.container #blog .section-content .blog-list .blog-sidebar .search .search-area {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0.3rem;
+  text-transform: lowercase;
+}
+.container #blog .section-content .blog-list .blog-sidebar .search .search-area input {
+  background-color: transparent;
+  flex-basis: 80%;
+  border: none;
+  height: clamp(40px, 1rem + 10vw, 60px);
+  padding: 0.3rem;
+  border-radius: 0.3rem 0 0 0.3rem;
+  border: 1px solid var(--gradient-color-2);
+  padding: 0.1rem 0.5rem;
+}
+.container #blog .section-content .blog-list .blog-sidebar .search .search-area input:focus {
+  border: none;
+  outline: 1px solid var(--gradient-color-1);
+}
+.container #blog .section-content .blog-list .blog-sidebar .search .search-area input:focus ~ .search-icon {
+  border: none;
+  outline: 1px solid var(--gradient-color-1);
+}
+.container #blog .section-content .blog-list .blog-sidebar .search .search-area .search-icon {
+  flex-basis: 20%;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0 0.3rem 0.3rem 0;
+  border: 1px solid var(--gradient-color-2);
+}
+.container #blog .section-content .blog-list .blog-sidebar .search .search-area .search-icon:hover {
+  border: 1px solid var(--secondary-color);
+  background-color: var(--secondary-color);
+}
+.container #blog .section-content .blog-list .blog-sidebar .categories {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.3rem;
+}
+.container #blog .section-content .blog-list .blog-sidebar .categories a {
+  color: var(--primary-color);
+}
+.container #blog .section-content .blog-list .blog-sidebar .categories a span {
+  font-size: 0.7rem;
+}
+.container #blog .section-content .blog-list .blog-sidebar .categories a:hover {
+  color: var(--gradient-color-2);
+}
+.container #blog .section-content .blog-list .blog-sidebar .recent-posts {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.container #blog .section-content .blog-list .blog-sidebar .recent-posts h1 {
+  text-transform: capitalize;
+}
+.container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-img {
+  flex-basis: 40%;
+  height: 70px;
+}
+.container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description {
+  flex-basis: 58%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description h1 {
+  line-height: 0.7rem;
+}
+.container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description h1 a {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  filter: unset;
+}
+.container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description h1 a:hover {
+  color: var(--gradient-color-2);
+}
+.container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description p {
+  font-size: 0.7rem;
+  filter: brightness(50%);
+}
+.container #blog .section-content .blog-list .blog-sidebar .tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem 0.3rem;
+}
+.container #blog .section-content .blog-list .blog-sidebar .tags h1 {
+  flex-basis: 100%;
+  padding: 1rem 0;
+}
+.container #blog .section-content .blog-list .blog-sidebar .tags a {
+  border-radius: 0.3rem;
+  text-transform: capitalize;
+  color: var(--primary-color);
+  padding: 0.3rem;
+  flex-basis: 10%;
+  border: 1px solid var(--gradient-color-2);
+}
+.container #blog .section-content .blog-list .blog-sidebar .tags a:hover {
+  border: 1px solid var(--gradient-color-1);
+  background-color: var(--gradient-color-1);
+  filter: unset;
 }
 .container #blog .section-content .blog-list .blogs {
   flex-basis: 70%;
+  flex-grow: 1;
   height: auto;
   border-radius: inherit;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   gap: 4rem 1rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
   padding: 0.3rem;
 }
 .container #blog .section-content .blog-list .blogs .blog {
+  position: relative;
+  flex-grow: 1;
   flex-basis: 48%;
   width: 200px;
   height: auto;
@@ -729,6 +880,7 @@ body {
   border-radius: 0.3rem 0.3rem 1rem 1rem;
 }
 .container #blog .section-content .blog-list .blogs .blog .img-top {
+  width: 100%;
   height: 300px;
   border-radius: 0.3rem 0.3rem 0 0;
 }
@@ -737,6 +889,7 @@ body {
   border-radius: 0.3rem 0.3rem 2rem 2rem;
 }
 .container #blog .section-content .blog-list .blogs .blog .about-blog {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -758,9 +911,10 @@ body {
   font-size: 0.74rem;
 }
 .container #blog .section-content .blog-list .blogs .blog .blog-body {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  grid: 1rem;
+  gap: 1rem;
 }
 .container #blog .section-content .blog-list .blogs .blog .blog-body p {
   padding: 1rem 0.5rem;
@@ -794,6 +948,7 @@ body {
 .container #blog .section-content .blog-list .blogs .blogs-navigate-more {
   flex-basis: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -807,6 +962,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.1rem;
+  flex-wrap: wrap;
 }
 .container #blog .section-content .blog-list .blogs .blogs-navigate-more .next-blogs .next-blog {
   width: 40px;
@@ -851,7 +1007,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--primary-bg-color);
+  background-color: var(--gradient-color-1);
   border: 2px solid var(--secondary-bg-color);
   border-radius: 1rem;
 }
@@ -977,6 +1133,31 @@ footer {
   .container-fluid .container section .section-content .section-footer .section-footer-4,
   .container-fluid .container section .section-content .section-footer .section-footer-5 {
     flex-basis: 40%;
+  }
+  .container-fluid .container #blog .section-content .blog-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.3rem;
+    width: 100%;
+    height: auto;
+    border-radius: 0.3rem;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar {
+    flex-basis: 100%;
+    height: auto;
+    order: 1;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0.3rem 0.3rem 0.3rem 1rem;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .categories {
+    flex-direction: row;
   }
 }
 @media (width >= 768px) {

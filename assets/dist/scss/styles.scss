@@ -598,9 +598,13 @@ body {
 
             .about-p {
                 // text-align: center;
-                width: 45%;
-                // background-color: red;
+                width: 50%;
+                text-indent: 0px;
+                padding: 1rem 0;
+                margin-bottom: 2rem;
             }
+
+
 
             .section-body {
                 margin-top: 3rem;
@@ -1196,9 +1200,258 @@ body {
         }
     }
 
+    #contactUs {
+        .map {
+            margin-bottom: 40px;
+
+            iframe {
+                border: 0;
+                width: 100%;
+                height: 400px;
+            }
+        }
+
+        .info {
+            padding: 40px;
+            box-shadow: 0px 2px 15px rgba(var(--color-black-rgb), 0.1);
+            overflow: hidden;
+
+            h3 {
+                font-weight: 600;
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            h4 {
+                margin-bottom: 10px;
+            }
+
+            p {
+                color: var(--color-secondary-light);
+                margin-bottom: 30px;
+                font-size: 15px;
+            }
+
+            .info-item+.info-item {
+                padding-top: 20px;
+                margin-top: 20px;
+                border-top: 1px solid rgba(var(--primary-color), 0.15);
+            }
+
+            .d-flex {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: .4rem;
+
+                .flex-shrink-0 {
+                    flex-shrink: 0 !important;
+                }
+            }
+        }
+
+
+
+        .info-item svg {
+            font-size: 24px;
+            color: var(--gradient-color-2);
+            transition: all 0.3s ease-in-out;
+            // margin-right: 20px;
+
+            h4 {
+                padding: 0;
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                color: var(--gradient-color-1);
+            }
+
+            p {
+                padding: 0;
+                margin-bottom: 0;
+                font-size: 14px;
+                color: var(--color-secondary-light);
+            }
+        }
+
+        .php-email-form {
+            width: 100%;
+
+            .form-group {
+                padding-bottom: 8px;
+            }
+
+            .error-message {
+                display: none;
+                color: rgb(255, 119, 0);
+                background: var(--secondary-color);
+                text-align: left;
+                padding: 15px;
+                font-weight: 600;
+
+                br+br {
+                    margin-top: 25px;
+                }
+            }
+
+            .sent-message {
+                display: none;
+                color: var(--primary-color);
+                background: var(--secondary-color);
+                text-align: center;
+                padding: 15px;
+                font-weight: 600;
+            }
+
+            .loading {
+                display: none;
+                background: var(--color-white);
+                text-align: center;
+                padding: 15px;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+                    margin: 0 10px -6px 0;
+                    border: 3px solid var(--secondary-color);
+                    border-top-color: var(--secondary-color);
+                    animation: animate-loading 1s linear infinite;
+                }
+            }
+
+            input[type=text],
+            input[type=email],
+            textarea {
+                border-radius: 0px;
+                box-shadow: none;
+                font-size: 14px;
+
+
+            }
+
+            input[type=text],
+            input[type=email] {
+                height: 48px;
+                padding: 10px 15px;
+            }
+
+            textarea {
+                padding: 10px 12px;
+                height: 290px;
+            }
+
+            button[type=submit] {
+                background: var(--color-primary);
+                border: 0;
+                padding: 13px 50px;
+                color: var(--color-white);
+                transition: 0.4s;
+                border-radius: 0;
+            }
+
+            button[type=submit]:hover {
+                background: rgba(var(--color-primary-rgb), 0.85);
+            }
+        }
+
+        .subcontainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-radius: .3rem;
+
+            .info-container {
+                flex-basis: 30%;
+                flex-grow: 1;
+                background: var(--glass-bg-color);
+                border-radius: inherit;
+            }
+
+            .form-container {
+                padding: 0 1rem;
+                flex-basis: 68%;
+                flex-grow: 1;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    .row {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+
+                        .form-group {
+                            flex-basis: 47%;
+                            display: flex;
+
+                            input {
+                                width: 100%;
+                            }
+                        }
+
+                    }
+
+                    .form-group {
+                        width: 100%;
+
+                        input,
+                        textarea {
+                            margin: .5rem 0;
+                            border: none;
+                            width: 100%;
+                            // background-color: var(--primary-color);
+                            background: var(--glass-bg-color);
+                            // filter: brightness(60%);
+                            color: #fff;
+                            border-radius: .3rem;
+
+                            &:focus {
+                                filter: unset;
+                                outline: 1px solid var(--secondary-color);
+                            }
+                        }
+                    }
+
+                    .loader {}
+
+                    .submitButton {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+
+                        button {
+                            border-radius: var(--borderRadius-pill);
+                            text-align: center;
+                            max-width: 200px;
+                            width: 100%;
+                            background-color: var(--gradient-color-1);
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: var(--secondary-color);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 
 }
+
+
+
 
 
 ::-webkit-scrollbar {

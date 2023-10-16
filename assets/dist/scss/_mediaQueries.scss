@@ -87,7 +87,31 @@
                 }
             }
 
+            #contactUs {
+                .subcontainer {
+                    .form-container {
+                        padding: 0 .1rem;
 
+                        form {
+                            .row {
+                                .form-group {
+                                    flex-basis: 100%;
+
+                                    // input {
+                                    // }
+                                }
+
+                            }
+
+                            .submitButton {
+                                button {
+                                    max-width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -198,6 +222,30 @@
 
                             }
 
+                        }
+                    }
+                }
+            }
+
+            #contactUs {
+                .subcontainer {
+                    .form-container {
+                        form {
+                            .row {
+                                .form-group {
+                                    flex-basis: 100%;
+
+                                    // input {
+                                    // }
+                                }
+
+                            }
+
+                            .submitButton {
+                                button {
+                                    max-width: 50%;
+                                }
+                            }
                         }
                     }
                 }

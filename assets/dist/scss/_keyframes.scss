@@ -1,3 +1,4 @@
+//*============== from width 0 to 100 =============
 @keyframes w-100 {
     0% {
         width: 0;
@@ -7,3 +8,233 @@
         width: 100%;
     }
 }
+
+@-webkit-keyframes w-100 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@-moz-keyframes w-100 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@-o-keyframes w-100 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+//------------------- End of width 0 to 100
+
+
+//*============== fade in ===========
+
+@keyframes fadein {
+    from {
+        font-size: 0rem;
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        font-size: 0rem;
+    }
+}
+
+@-moz-keyframes fadein {
+    from {
+        font-size: 0rem;
+    }
+}
+
+@-o-keyframes fadein {
+    from {
+        font-size: 0rem;
+    }
+}
+
+//-------------------- End of fade in keyframes
+
+
+
+//*============== borderRadius blob  ===========
+@keyframes borderRadius {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+@-webkit-keyframes borderRadius {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+@-moz-keyframes borderRadius {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+@-o-keyframes borderRadius {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+//-------------------- End of borderRadius blob
+
+
+//*======================= zoomIn ===========
+@keyframes zoomIn {
+    0% {
+        transform: translate(-50%, -100%);
+        -webkit-transform: translate(-50%, -100%);
+        -moz-transform: translate(-50%, -100%);
+        -o-transform: translate(-50%, -100%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }
+}
+
+@-webkit-keyframes zoomIn {
+    0% {
+        transform: translate(-50%, -100%);
+        -webkit-transform: translate(-50%, -100%);
+        -moz-transform: translate(-50%, -100%);
+        -o-transform: translate(-50%, -100%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }
+}
+
+@-moz-keyframes zoomIn {
+    0% {
+        transform: translate(-50%, -100%);
+        -webkit-transform: translate(-50%, -100%);
+        -moz-transform: translate(-50%, -100%);
+        -o-transform: translate(-50%, -100%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }
+}
+
+@-o-keyframes zoomIn {
+    0% {
+        transform: translate(-50%, -100%);
+        -webkit-transform: translate(-50%, -100%);
+        -moz-transform: translate(-50%, -100%);
+        -o-transform: translate(-50%, -100%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }
+}
+
+//-------------------- End of zoomIn
+
+
+//*======================= zoomIn ===========
+@keyframes fromTop {
+    from {
+        transform: translateY(-100px);
+        -webkit-transform: translateY(-100px);
+        -moz-transform: translateY(-100px);
+        -o-transform: translateY(-100px);
+    }
+}
+
+@-webkit-keyframes fromTop {
+    from {
+        transform: translateY(-100px);
+        -webkit-transform: translateY(-100px);
+        -moz-transform: translateY(-100px);
+        -o-transform: translateY(-100px);
+    }
+}
+
+@-moz-keyframes fromTop {
+    from {
+        transform: translateY(-100px);
+        -webkit-transform: translateY(-100px);
+        -moz-transform: translateY(-100px);
+        -o-transform: translateY(-100px);
+    }
+}
+
+@-o-keyframes fromTop {
+    from {
+        transform: translateY(-100px);
+        -webkit-transform: translateY(-100px);
+        -moz-transform: translateY(-100px);
+        -o-transform: translateY(-100px);
+    }
+}
+
+//-------------------- End of zoomIn

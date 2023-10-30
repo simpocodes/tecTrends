@@ -202,7 +202,7 @@ span {
 
 .container-fluid {
     overflow-x: hidden;
-    max-width: 1300px;
+    max-width: 1300px !important;
     margin: auto;
     padding: 0 .3rem;
     overflow: hidden;
@@ -379,6 +379,7 @@ span {
             }
 
             .account-enter {
+                margin-top: 1rem;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -475,7 +476,10 @@ span {
         }
 
         .product {
-            width: 250px;
+            flex-basis: 20%;
+            min-width: 200px;
+            // width: 250px;
+            // max-width: 250px;
             height: 200px;
             background-color: var(--glass-bg-color);
             border-radius: .3rem;
@@ -485,8 +489,7 @@ span {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                position: center;
-                // filter: brightness(50%);
+                object-position: center;
                 border-radius: inherit;
             }
 
@@ -614,7 +617,7 @@ span {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: 0rem;
             background-color: inherit;
 
             .title {
@@ -644,7 +647,7 @@ span {
             }
 
             .section-body {
-                margin-top: 3rem;
+                margin-top: 1rem;
                 display: flex;
                 flex-direction: row;
                 gap: 1rem;
@@ -702,6 +705,13 @@ span {
                                 border-radius: 100%;
                                 background-color: var(--glass-bg-color);
                                 padding: 1rem;
+                                border: 2px solid transparent;
+
+                                &:hover {
+                                    transition: .3s;
+                                    border: 2px solid var(--gradient-color-1);
+                                    color: var(--gradient-color-1);
+                                }
                             }
 
                             p {
@@ -727,9 +737,11 @@ span {
                 .section-footer-3,
                 .section-footer-4,
                 .section-footer-5 {
-                    box-shadow: 0 0 3px 10px var(--link-hover);
+                    // border: 2px solid var(--gradient-color-1);
+                    box-shadow: 0 0 3px 5px var(--primary-bg-color);
                     position: relative;
-                    background-color: var(--link-hover);
+                    background-color: var(--glass-bg-color);
+                    // background-color: var(--primary-bg-color);
                     border-radius: .3rem;
                     flex-basis: 20%;
                     padding: 1rem;
@@ -738,7 +750,32 @@ span {
                     gap: 1rem;
                     justify-content: center;
                     align-items: center;
+                    min-width: 200px;
                     height: 150px;
+                    flex-grow: .5;
+                    flex-wrap: wrap;
+
+
+                    &::selection {
+                        color: none;
+                    }
+
+                    &:hover {
+                        transition: .6s;
+                        transform: translateY(-10px);
+                    }
+
+                    &:hover>svg {
+                        transition: 1.2s;
+                        background-color: var(--gradient-color-1);
+                    }
+
+                    &:hover>b {
+                        transition: .4s;
+                        font-size: 1.5rem;
+                        color: var(--primary-color);
+                        filter: unset;
+                    }
 
                     svg {
                         position: absolute;
@@ -755,7 +792,7 @@ span {
                         width: 30px;
                         height: 30px;
                         border-radius: 100%;
-                        background-color: var(--link-hover);
+                        background-color: var(--glass-bg-color);
                         padding: .8rem;
                         box-shadow: 0 0 3px 10px var(--primary-bg-color);
                     }
@@ -784,6 +821,13 @@ span {
                     padding: 2rem 0;
                     color: var(--gradient-color-2);
                     box-shadow: 0 0 3px 10px rgba(1, 5, 22, 0.095);
+
+                    &:hover {
+                        transition: .3s;
+                        color: var(--primary-color);
+                        filter: unset;
+                        transform: scale(1.2, 1.2);
+                    }
                 }
             }
         }
@@ -819,13 +863,15 @@ span {
                     min-width: 200px;
                     flex-basis: 25%;
                     flex-grow: 1;
-                    height: 350px;
+                    min-height: 350px;
+                    height: auto !important;
                     border-radius: inherit;
                     border: 1px solid var(--glass-bg-color);
+                    // background-color: red;
 
                     .service-img-top {
                         width: 100%;
-                        height: 50%;
+                        height: auto;
                         border-radius: inherit;
 
                         img {
@@ -837,8 +883,9 @@ span {
 
                     .service-body {
                         width: 100%;
-                        height: 50%;
+                        height: auto !important;
                         padding: .2rem;
+                        // background-color: red;
 
                         p {
                             padding: 1rem;
@@ -975,15 +1022,19 @@ span {
                         }
 
                         .recent-post {
+                            height: auto;
+                            // min-height: 300px;
                             display: flex;
                             flex-direction: row;
                             gap: .5rem;
                             justify-content: space-between;
                             align-items: flex-start;
+                            padding: .2rem;
 
                             .recent-post-img {
                                 flex-basis: 40%;
-                                height: 70px;
+                                height: 100px;
+                                aspect-ratio: 4/3;
 
                                 img {
                                     width: 100%;
@@ -1001,6 +1052,7 @@ span {
 
                                 h1 {
                                     line-height: .7rem;
+
                                 }
 
                                 h1 a {
@@ -1044,6 +1096,7 @@ span {
                             border: 1px solid var(--gradient-color-2);
 
                             &:hover {
+                                color: #fff !important;
                                 border: 1px solid var(--gradient-color-1);
                                 background-color: var(--gradient-color-1);
                                 filter: unset;
@@ -1177,6 +1230,7 @@ span {
                         align-items: center;
                         overflow: hidden;
                         padding: .3rem;
+                        height: 42px;
 
                         .next-blogs {
                             flex-basis: 50%;

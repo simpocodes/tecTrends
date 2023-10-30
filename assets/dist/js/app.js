@@ -75,3 +75,10 @@ $('.empty .close').on({
 })
 //---------------- End of empty div
 
+// console.log($('.next-blog'))
+// $('.next-blog').forEach(e => {
+//     console.log(e)
+// })
+// Array.from($('.next-blog')).forEach(e => {
+//     console.log(e)
+// })

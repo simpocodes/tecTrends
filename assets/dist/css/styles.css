@@ -183,7 +183,7 @@ span {
 
 .container-fluid {
   overflow-x: hidden;
-  max-width: 1300px;
+  max-width: 1300px !important;
   margin: auto;
   padding: 0 0.3rem;
   overflow: hidden;
@@ -337,6 +337,7 @@ span {
   line-height: clamp(1.4rem, 1rem + 10vw, 1.2rem) !important;
 }
 .container header .header-text .account-enter {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -419,7 +420,8 @@ span {
   animation-duration: 4s;
 }
 .container .trending-products .product {
-  width: 250px;
+  flex-basis: 20%;
+  min-width: 200px;
   height: 200px;
   background-color: var(--glass-bg-color);
   border-radius: 0.3rem;
@@ -429,7 +431,7 @@ span {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: center;
+  object-position: center;
   border-radius: inherit;
 }
 .container .trending-products .product .product-buy-empty,
@@ -534,7 +536,7 @@ span {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0rem;
   background-color: inherit;
 }
 .container section .section-content .title {
@@ -559,7 +561,7 @@ span {
   margin-bottom: 2rem;
 }
 .container section .section-content .section-body {
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -613,6 +615,12 @@ span {
   border-radius: 100%;
   background-color: var(--glass-bg-color);
   padding: 1rem;
+  border: 2px solid transparent;
+}
+.container section .section-content .section-body .section-body-text .notes .notes-item svg:hover {
+  transition: 0.3s;
+  border: 2px solid var(--gradient-color-1);
+  color: var(--gradient-color-1);
 }
 .container section .section-content .section-body .section-body-text .notes .notes-item p {
   padding: 0.4rem 0;
@@ -632,9 +640,9 @@ span {
 .container section .section-content .section-footer .section-footer-3,
 .container section .section-content .section-footer .section-footer-4,
 .container section .section-content .section-footer .section-footer-5 {
-  box-shadow: 0 0 3px 10px var(--link-hover);
+  box-shadow: 0 0 3px 5px var(--primary-bg-color);
   position: relative;
-  background-color: var(--link-hover);
+  background-color: var(--glass-bg-color);
   border-radius: 0.3rem;
   flex-basis: 20%;
   padding: 1rem;
@@ -643,7 +651,43 @@ span {
   gap: 1rem;
   justify-content: center;
   align-items: center;
+  min-width: 200px;
   height: 150px;
+  flex-grow: 0.5;
+  flex-wrap: wrap;
+}
+.container section .section-content .section-footer .section-footer-1::selection,
+.container section .section-content .section-footer .section-footer-2::selection,
+.container section .section-content .section-footer .section-footer-3::selection,
+.container section .section-content .section-footer .section-footer-4::selection,
+.container section .section-content .section-footer .section-footer-5::selection {
+  color: none;
+}
+.container section .section-content .section-footer .section-footer-1:hover,
+.container section .section-content .section-footer .section-footer-2:hover,
+.container section .section-content .section-footer .section-footer-3:hover,
+.container section .section-content .section-footer .section-footer-4:hover,
+.container section .section-content .section-footer .section-footer-5:hover {
+  transition: 0.6s;
+  transform: translateY(-10px);
+}
+.container section .section-content .section-footer .section-footer-1:hover > svg,
+.container section .section-content .section-footer .section-footer-2:hover > svg,
+.container section .section-content .section-footer .section-footer-3:hover > svg,
+.container section .section-content .section-footer .section-footer-4:hover > svg,
+.container section .section-content .section-footer .section-footer-5:hover > svg {
+  transition: 1.2s;
+  background-color: var(--gradient-color-1);
+}
+.container section .section-content .section-footer .section-footer-1:hover > b,
+.container section .section-content .section-footer .section-footer-2:hover > b,
+.container section .section-content .section-footer .section-footer-3:hover > b,
+.container section .section-content .section-footer .section-footer-4:hover > b,
+.container section .section-content .section-footer .section-footer-5:hover > b {
+  transition: 0.4s;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  filter: unset;
 }
 .container section .section-content .section-footer .section-footer-1 svg,
 .container section .section-content .section-footer .section-footer-2 svg,
@@ -664,7 +708,7 @@ span {
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  background-color: var(--link-hover);
+  background-color: var(--glass-bg-color);
   padding: 0.8rem;
   box-shadow: 0 0 3px 10px var(--primary-bg-color);
 }
@@ -697,6 +741,12 @@ span {
   color: var(--gradient-color-2);
   box-shadow: 0 0 3px 10px rgba(1, 5, 22, 0.095);
 }
+.container section .section-content .section-partners svg:hover {
+  transition: 0.3s;
+  color: var(--primary-color);
+  filter: unset;
+  transform: scale(1.2, 1.2);
+}
 .container #services .section-content {
   border-radius: 0.3rem;
 }
@@ -723,13 +773,14 @@ span {
   min-width: 200px;
   flex-basis: 25%;
   flex-grow: 1;
-  height: 350px;
+  min-height: 350px;
+  height: auto !important;
   border-radius: inherit;
   border: 1px solid var(--glass-bg-color);
 }
 .container #services .section-content .service-list .service .service-img-top {
   width: 100%;
-  height: 50%;
+  height: auto;
   border-radius: inherit;
 }
 .container #services .section-content .service-list .service .service-img-top img {
@@ -739,7 +790,7 @@ span {
 }
 .container #services .section-content .service-list .service .service-body {
   width: 100%;
-  height: 50%;
+  height: auto !important;
   padding: 0.2rem;
 }
 .container #services .section-content .service-list .service .service-body p {
@@ -851,15 +902,18 @@ span {
   text-transform: capitalize;
 }
 .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post {
+  height: auto;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   justify-content: space-between;
   align-items: flex-start;
+  padding: 0.2rem;
 }
 .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-img {
   flex-basis: 40%;
-  height: 70px;
+  height: 100px;
+  aspect-ratio: 4/3;
 }
 .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-img img {
   width: 100%;
@@ -910,6 +964,7 @@ span {
   border: 1px solid var(--gradient-color-2);
 }
 .container #blog .section-content .blog-list .blog-sidebar .tags a:hover {
+  color: #fff !important;
   border: 1px solid var(--gradient-color-1);
   background-color: var(--gradient-color-1);
   filter: unset;
@@ -1023,6 +1078,7 @@ span {
   align-items: center;
   overflow: hidden;
   padding: 0.3rem;
+  height: 42px;
 }
 .container #blog .section-content .blog-list .blogs .blogs-navigate-more .next-blogs {
   flex-basis: 50%;
@@ -1436,11 +1492,14 @@ footer .copyright {
     opacity: 1;
     top: 0% !important;
   }
+  .container-fluid .container header .header-text {
+    order: 1;
+  }
   .container-fluid .container .trending-products .arrow {
     display: none;
   }
   .container-fluid .container .trending-products .product {
-    width: 100%;
+    flex-basis: 100%;
     height: 200px;
   }
   .container-fluid .container section .section-content .about-p {
@@ -1465,6 +1524,64 @@ footer .copyright {
   .container-fluid .container section .section-content .section-footer .section-footer-4,
   .container-fluid .container section .section-content .section-footer .section-footer-5 {
     flex-basis: 80%;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar {
+    flex-basis: 100%;
+    padding: 0.5rem 0;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts {
+    width: 100%;
+    max-width: unset;
+    flex-direction: row;
+    gap: 2rem 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts h1 {
+    flex-basis: 100%;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post {
+    flex-basis: 30%;
+    min-width: 200px;
+    flex-grow: 1;
+    flex-wrap: unset;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-img {
+    flex-basis: 40%;
+    height: min(100px, 40vw);
+    aspect-ratio: 4/3;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description {
+    flex-basis: 70%;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description h1 {
+    width: 100%;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description h1 a {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    filter: unset;
+    -webkit-filter: unset;
+    -moz-filter: unset;
+    -o-filter: unset;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description h1 a:hover {
+    color: var(--gradient-color-2);
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description p {
+    font-size: 0.7rem;
+    filter: brightness(50%);
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .categories {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
   .container-fluid .container #contactUs .subcontainer .form-container {
     padding: 0 0.1rem;
@@ -1491,10 +1608,8 @@ footer .copyright {
     height: 300px;
     border-radius: 10rem 3rem 7rem 2rem;
   }
-  .container-fluid .container .trending-products .arrow {
-    display: none;
-  }
   .container-fluid .container .trending-products .product {
+    flex-basis: 20%;
     flex-grow: 1;
   }
   .container-fluid .container section .section-content .about-p {
@@ -1503,34 +1618,46 @@ footer .copyright {
   .container-fluid .container section .section-content .section-body {
     flex-direction: column;
   }
+  .container-fluid .container section .section-content .notes-item {
+    width: 80%;
+    flex-wrap: unset;
+  }
   .container-fluid .container section .section-content .section-footer .section-footer-1,
   .container-fluid .container section .section-content .section-footer .section-footer-2,
   .container-fluid .container section .section-content .section-footer .section-footer-3,
   .container-fluid .container section .section-content .section-footer .section-footer-4,
   .container-fluid .container section .section-content .section-footer .section-footer-5 {
-    flex-basis: 40%;
-  }
-  .container-fluid .container #blog .section-content .blog-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding: 0.3rem;
-    width: 100%;
-    height: auto;
-    border-radius: 0.3rem;
+    flex-basis: unset;
   }
   .container-fluid .container #blog .section-content .blog-list .blog-sidebar {
     flex-basis: 100%;
-    height: auto;
-    order: 1;
-    border-radius: inherit;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 0.3rem 0.3rem 0.3rem 1rem;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts {
+    width: 100%;
+    max-width: unset;
+    flex-direction: row;
+    gap: 2rem 1rem;
+    flex-wrap: wrap;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts h1 {
+    flex-basis: 100%;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post {
+    flex-basis: 40%;
+    flex-wrap: unset;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-img {
+    flex-basis: 40%;
+    height: min(100px, 15vw);
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description h1 {
+    width: 80%;
   }
   .container-fluid .container #blog .section-content .blog-list .blog-sidebar .categories {
     flex-direction: row;
@@ -1583,6 +1710,7 @@ footer .copyright {
   }
   .container-fluid .container header .header-text {
     width: 40%;
+    order: unset;
   }
   .container-fluid .container header .header-text p {
     font-size: 1.3rem;
@@ -1592,8 +1720,17 @@ footer .copyright {
     width: 300px;
     height: 300px;
   }
+  .container-fluid .container .trending-products .product {
+    flex-basis: 20%;
+  }
   .container-fluid .container .arrow {
     display: none;
+  }
+  .container-fluid .container section .section-content .section-body {
+    flex-direction: unset;
+  }
+  .container-fluid .container section .section-content .notes-item {
+    flex-wrap: unset;
   }
   .container-fluid footer .subscribe_form {
     flex-basis: 50%;
@@ -1629,8 +1766,17 @@ footer .copyright {
     width: 250px;
     height: 250px;
   }
-  .container-fluid .container .arrow {
-    display: none;
+  .container-fluid .container .trending-products .product {
+    flex-grow: unset;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar {
+    flex-basis: 29%;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .categories {
+    flex-direction: column;
+  }
+  .container-fluid .container #blog .section-content .blog-list .blog-sidebar .recent-posts .recent-post .recent-post-description h1 {
+    width: 100%;
   }
 }
 @media (min-width: 1100px) {
@@ -1653,9 +1799,6 @@ footer .copyright {
   }
   .container-fluid .container .trending-articles {
     overflow: hidden;
-  }
-  .container-fluid .container .trending-articles .arrow {
-    display: unset;
   }
 }
 @keyframes w-100 {

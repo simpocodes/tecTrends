@@ -15,6 +15,9 @@
                 box-shadow: 0 1px 200px black;
 
                 ul {
+                    width: 100%;
+                    // position: fixed;
+
                     li {
                         a {
                             border: .1px solid transparent;
@@ -193,6 +196,24 @@
                 }
             }
         }
+
+        footer {
+            // background-color: red;
+
+            .footer-content {
+                justify-content: flex-start;
+                align-items: flex-start;
+                // background-color: green;
+            }
+
+
+            .copyright {
+                // align-self: center;
+
+
+
+            }
+        }
     }
 }
 
@@ -358,6 +379,8 @@
                 ul {
                     padding: 0;
                     flex-direction: row;
+                    background-color: unset;
+                    width: unset;
 
                     .close {
                         display: none;
@@ -430,6 +453,9 @@
         footer {
             .subscribe_form {
                 flex-basis: 50%;
+                justify-content: center;
+                align-items: center;
+                // background-color: cen;
 
                 form {
                     width: 50%;

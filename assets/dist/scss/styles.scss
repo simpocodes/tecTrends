@@ -15,6 +15,7 @@
     --secondary-bg-color: #0c054c;
     --glass-bg-color: #a39ce412;
     --link-hover: rgb(77, 115, 219);
+    // --link-hover: rgb(2, 83, 246);
     --gradient-color-1: #0d0dba;
     --gradient-color-2: #a39ce4;
     --borderRadius-pill: 3rem;
@@ -37,6 +38,7 @@ a {
 
     &:hover {
         color: var(--link-hover) !important;
+        filter: unset;
     }
 }
 
@@ -128,6 +130,8 @@ span {
     -moz-animation: zoomIn 1s;
     -o-animation: zoomIn 1s;
 
+
+
     .close-empty {
         position: absolute;
         top: 2%;
@@ -135,6 +139,8 @@ span {
         width: 50px;
         height: 50px;
         border-radius: 3rem;
+
+
     }
 
     .close {
@@ -157,9 +163,19 @@ span {
         z-index: 100;
         cursor: pointer;
 
+
+        &:hover>a {
+            filter: unset;
+            color: var(--primary-color) !important;
+        }
+
         a {
             line-height: 0;
             font-size: clamp(1.5rem, 1rem + 10vh, 2rem);
+
+            &:hover {
+                color: var(--primary-color) !important;
+            }
         }
 
 
@@ -169,6 +185,8 @@ span {
             -moz-transition: .3s;
             -o-transition: .3s;
             background-color: var(--gradient-color-1);
+
+
         }
     }
 
@@ -204,7 +222,7 @@ span {
     overflow-x: hidden;
     max-width: 1300px !important;
     margin: auto;
-    padding: 0 .3rem;
+    padding: 0;
     overflow: hidden;
 
 }
@@ -233,10 +251,11 @@ span {
 
     nav {
         width: 100%;
-        background-color: var(--secondary-bg-color);
+        box-shadow: 0 0 3px 5px var(--primary-bg-color);
         position: absolute;
         transition: .3s;
         z-index: 10;
+        background-color: var(--primary-bg-color);
 
         ul {
             display: flex;
@@ -244,12 +263,13 @@ span {
             justify-content: center;
             padding: 4rem 0 1rem;
             gap: 1rem;
+            background-color: var(--glass-bg-color);
 
             .close {
                 position: absolute;
                 top: 1.2rem;
                 right: .9rem;
-                background-color: var(--secondary-bg-color);
+                border: 2px solid var(--glass-bg-color);
                 width: 40px;
                 height: 40px;
                 border-radius: 100%;
@@ -387,7 +407,8 @@ span {
                 gap: 1rem;
                 width: 100%;
 
-                button {
+                a {
+                    // text-decoration: none;
                     padding: .4rem 2rem;
                     border-radius: var(--borderRadius-pill);
                     background-color: inherit;
@@ -396,6 +417,8 @@ span {
                     text-transform: capitalize;
 
                     &:hover {
+                        color: var(--primary-color) !important;
+                        filter: unset;
                         background-color: var(--gradient-color-1);
                         border: .2rem solid transparent;
                         backdrop-filter: blur(25px);
@@ -538,6 +561,18 @@ span {
                     border-radius: inherit;
                     text-align: center;
                     line-height: 1.8rem;
+
+                    &:hover {
+                        color: var(--primary-color) !important;
+                    }
+                }
+
+                span {
+
+                    &:hover {
+                        filter: unset;
+                        color: var(--primary-color) !important;
+                    }
                 }
             }
 
@@ -1385,18 +1420,6 @@ span {
                 padding-bottom: 8px;
             }
 
-            .error-message {
-                display: none;
-                color: rgb(255, 119, 0);
-                background: var(--secondary-color);
-                text-align: left;
-                padding: 15px;
-                font-weight: 600;
-
-                br+br {
-                    margin-top: 25px;
-                }
-            }
 
             .sent-message {
                 display: none;
@@ -1407,27 +1430,6 @@ span {
                 font-weight: 600;
             }
 
-            .loading {
-                display: none;
-                background: var(--color-white);
-                text-align: center;
-                padding: 15px;
-
-                &::before {
-                    content: "";
-                    display: inline-block;
-                    border-radius: 50%;
-                    width: 24px;
-                    height: 24px;
-                    margin: 0 10px -6px 0;
-                    border: 3px solid var(--secondary-color);
-                    border-top-color: var(--secondary-color);
-                    animation: animate-loading 1s linear infinite;
-                    -webkit-animation: animate-loading 1s linear infinite;
-                    -moz-animation: animate-loading 1s linear infinite;
-                    -o-animation: animate-loading 1s linear infinite;
-                }
-            }
 
             input[type=text],
             input[type=email],
@@ -1461,7 +1463,7 @@ span {
             }
 
             button[type=submit]:hover {
-                background: rgba(var(--color-primary-rgb), 0.85);
+                background: var(--secondary-bg-color);
             }
         }
 
@@ -1544,7 +1546,7 @@ span {
                             cursor: pointer;
 
                             &:hover {
-                                background-color: var(--secondary-color);
+                                background-color: var(--secondary-bg-color);
                             }
                         }
                     }
@@ -1556,6 +1558,114 @@ span {
     //--------------------------- End of contact Us section
 
 
+    //?==================== login ============
+
+    .account-form {
+        width: 100%;
+        height: 92vh;
+        position: relative;
+
+        .back-home {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            z-index: 1;
+
+        }
+
+        form {
+            padding: .3rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(400px, 100vw);
+            border: 2px solid var(--glass-bg-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .8rem;
+            border-radius: 1.2rem;
+            position: relative;
+            box-shadow: 0 0 3px 5px var(--primary-bg-color);
+
+
+            .profile {
+                width: 100%;
+                height: 50px;
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    top: 30%;
+                    left: 50%;
+                    transform: translate(-50%, -30%);
+                    font-size: 2rem;
+                    filter: brightness(60%);
+                }
+            }
+
+            label {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                text-transform: uppercase;
+                font-size: .7rem;
+                line-height: .2rem;
+
+                span {
+                    flex-basis: 38%;
+                }
+            }
+
+            input {
+                flex-grow: 1;
+                height: 40px;
+                padding: 10px 15px;
+                margin: 0.5rem 0;
+                border: none;
+                flex-basis: 60%;
+                background: var(--glass-bg-color);
+                color: #fff;
+                border-radius: 0.3rem;
+
+                &:focus {
+                    outline: 2px solid var(--gradient-color-1);
+                }
+
+            }
+
+            button[type="submit"] {
+                width: min(30%, 100%);
+                border: none;
+                outline: none;
+                border-radius: inherit;
+                padding: 1rem .3rem;
+                height: 20px;
+                line-height: 0;
+                cursor: pointer;
+                background-color: var(--gradient-color-1);
+                letter-spacing: .06rem;
+                align-self: flex-end;
+                margin-right: 5%;
+
+                &:hover {
+                    background-color: var(--secondary-bg-color);
+                }
+            }
+
+            .account-alt {
+                font-size: .7rem;
+                display: flex;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            //--------------------------- End of login
+
+
+        }
+    }
 }
 
 //-------------------------- End of container 
@@ -1563,6 +1673,7 @@ span {
 
 //*=============== footer ============
 footer {
+    background-color: var(--glass-bg-color);
     width: 100%;
     height: auto;
     display: flex;
@@ -1571,8 +1682,13 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10rem;
-    padding: 1rem .3rem .3rem;
-    border-top: 2px solid var(--glass-bg-color);
+    padding: 4rem .3rem .3rem 2rem;
+    // border-top: 2px solid var(--glass-bg-color);
+
+    h1 {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
 
     .footer-content {
         flex-grow: 1;
@@ -1592,6 +1708,8 @@ footer {
             flex-direction: column;
             gap: .3rem;
             justify-content: flex-start;
+
+
 
             li {
                 display: flex;
@@ -1634,6 +1752,7 @@ footer {
     }
 
     .subscribe_form {
+        margin-top: 1rem;
         flex-basis: 100%;
         justify-content: center;
         align-items: center;
@@ -1686,6 +1805,9 @@ footer {
         justify-content: center;
         align-items: center;
         min-height: unset;
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
     }
 }
 
